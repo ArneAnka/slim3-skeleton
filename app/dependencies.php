@@ -71,7 +71,6 @@ $container['db'] = function ($c) {
 // -----------------------------------------------------------------------------
 // Action factories ?
 // -----------------------------------------------------------------------------
-
 $container[App\Action\HomeAction::class] = function ($c) {
     return new App\Action\HomeAction($c->get('view'), $c->get('logger'));
 };
@@ -85,4 +84,11 @@ $container['HomeController'] = function ($container){
     return new App\Controllers\HomeController($container->view,
                                               $container->logger,
                                               $container->flash);
+};
+
+// -----------------------------------------------------------------------------
+// Model factories
+// -----------------------------------------------------------------------------
+$container['User'] = function ($container) {
+    return new App\Models\User($container->get('db'));
 };

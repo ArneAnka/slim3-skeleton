@@ -26,7 +26,7 @@ class HomeController
 		
 		$this->logger->info("Home page action dispatched");
 
-		$query = User::find('1');
+		$query = User::findSecond('1');
 
 		return $this->view->render($response, 'home.twig', ['querys' => $query]);
 	}
