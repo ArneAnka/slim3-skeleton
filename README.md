@@ -1,10 +1,11 @@
 # Slim 3 Skeleton
 
-This is a simple skeleton project for Slim 3 that includes Twig, Flash messages and Monolog.
+This is a simple skeleton project for Slim 3 that includes Twig, TwigExtension, Flash messages, Monolog and PDO connection.
 
 ## Create your project:
 
-    $ composer create-project -n -s dev akrabat/slim3-skeleton my-app
+    $ git clone https://github.com/arneanka/slim3-boilerplate
+    $ composer update
 
 ### Run it:
 
@@ -16,7 +17,7 @@ This is a simple skeleton project for Slim 3 that includes Twig, Flash messages 
 
 * `app`: Application code
 * `app/src`: All class files within the `App` namespace
-* `app/templates`: Twig template files
+* `resources/views`: Twig template files
 * `cache/twig`: Twig's Autocreated cache files
 * `log`: Log files
 * `public`: Webserver root
@@ -30,4 +31,11 @@ This is a simple skeleton project for Slim 3 that includes Twig, Flash messages 
 * `app/middleware.php`: Application middleware
 * `app/routes.php`: All application routes are here
 * `app/src/Action/HomeAction.php`: Action class for the home page
-* `app/templates/home.twig`: Twig template file for the home page
+* `app/src/Controllers/HomeAction.php`: Home controller for the home page
+* `resources/views/home.twig`: Twig template file for the home page
+
+## TODO
+* Models to use PDO
+* Sign up
+* Sign in
+* Simple CRUD

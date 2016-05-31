@@ -1,0 +1,18 @@
+{% extends 'templates/app.twig' %}
+{% block title %}Homepage view{% endblock %}
+{% block content %}
+
+<div class="container">
+	<div class="col-sm-12 comments corners text-center">
+	  <h3>I'm slim, the microframework for PHP 😀</h3>
+	</div>
+
+	<div class="col-sm-12 comments corners">
+  		{% if querys %}
+  			{{ querys }}
+		{% endif %}
+
+		<b>This is a TwigExtension test: {{ diffForHumans("2016-05-25 21:07:46") }}</b>
+</div>
+
+{% endblock %}
