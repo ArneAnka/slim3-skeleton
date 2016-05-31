@@ -12,7 +12,7 @@ class User {
 		// $query->execute(array(':id' => $id));
 		// return $query->fetchAll();
 
-		return 'This should return result from a query....';
+		return 'This return should be from a query....';
 
     }
 
