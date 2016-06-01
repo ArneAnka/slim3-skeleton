@@ -13,8 +13,9 @@ class HomeController
 	protected $view;
 	protected $logger;
 	protected $flash;
+	protected $user;
 
-	public function __construct(View $view, LoggerInterface $logger, FlashMessages $flash)
+	public function __construct(View $view, LoggerInterface $logger, FlashMessages $flash, User $user)
 	{
 		$this->view = $view;
 		$this->flash = $flash;
@@ -27,9 +28,7 @@ class HomeController
 		
 		$this->logger->info("Home page action dispatched");
 
-		var_dump($user);
-
-		// $query = $this->User->findOne('4');
+		$query = $this->user->findOne('4');
 
 		return $this->view->render($response, 'home.twig', ['query' => $query]);
 	}

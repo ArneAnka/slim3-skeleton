@@ -83,7 +83,8 @@ $container[App\Action\HomeAction::class] = function ($c) {
 $container['HomeController'] = function ($c){
     return new App\Controllers\HomeController($c->view,
                                               $c->logger,
-                                              $c->flash);
+                                              $c->flash,
+                                              $c->get('User'));
 };
 
 // -----------------------------------------------------------------------------

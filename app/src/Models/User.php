@@ -16,7 +16,7 @@ class User
 		$this->db = $db;
 	}
 
-    public function all($id)
+    public function all()
 	{
 		return 'This return should be from a query....';
     }
@@ -26,7 +26,7 @@ class User
 		$sql = 'SELECT * FROM hej WHERE id = :id';
 		$query = $this->db->prepare($sql);
 		$query->execute(array(':id' => $id));
-		return $query->fetchAll();
+		return $query->fetch();
     }
 
 }
