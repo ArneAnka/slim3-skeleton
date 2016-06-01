@@ -2,33 +2,31 @@
 
 namespace App\Models;
 
-class User {
+use PDO;
 
-	protected $db;
+class User 
+{
+	/**
+	* @var $db
+	*/
+	private $db;
 
-	public function __construct($db)
+	public function __construct(PDO $db)
 	{
 		$this->db = $db;
 	}
 
-    public static function find($id)
+    public function all($id)
 	{
-		// $sql = "SELECT * FROM hej WHERE id = :id";
-		// $query = $database->prepare($sql);
-		// $query->execute(array(':id' => $id));
-		// return $query->fetchAll();
-
 		return 'This return should be from a query....';
     }
 
-    public static function findSecond($id)
+    public function findOne($id)
     {
-        $sql = 'SELECT * FROM hej WHERE id = :id';
-        $query = $this->db->prepare($sql);
-        // $query->bindParam(':id', $id, \PDO::PARAM_INT);
+		$sql = 'SELECT * FROM hej WHERE id = :id';
+		$query = $this->db->prepare($sql);
 		$query->execute(array(':id' => $id));
-
-        return $query->fetchAll();
+		return $query->fetchAll();
     }
 
 }

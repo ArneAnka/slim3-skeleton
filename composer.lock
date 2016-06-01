@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e95bdb61915d0b89eb9541760a2dc65b",
-    "content-hash": "d2bd196cb432e056434823bd18dae9cf",
+    "hash": "7f985e83ed0b8563924df138ba2871e0",
+    "content-hash": "7e74c88add16425b03484b40884d1c5d",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -33,6 +33,46 @@
             ],
             "description": "Promoting the interoperability of container objects (DIC, SL, etc.)",
             "time": "2014-12-30 15:22:37"
+        },
+        {
+            "name": "fpdo/fluentpdo",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fpdo/fluentpdo.git",
+                "reference": "db16192f7a70f28193930bdbc6f05880220fe670"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fpdo/fluentpdo/zipball/db16192f7a70f28193930bdbc6f05880220fe670",
+                "reference": "db16192f7a70f28193930bdbc6f05880220fe670",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "FluentPDO/FluentPDO.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0",
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Marek Lichtner",
+                    "homepage": "http://licht.sk/"
+                }
+            ],
+            "description": "FluentPDO is small PHP library for rapid query building. Killer feature is smart join builder which generates joins automatically.",
+            "homepage": "https://github.com/fpdo/fluentpdo",
+            "keywords": [
+                "database",
+                "dbal",
+                "pdo"
+            ],
+            "time": "2016-03-30 20:33:43"
         },
         {
             "name": "monolog/monolog",
@@ -518,7 +558,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "fpdo/fluentpdo": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

@@ -57,15 +57,15 @@ $container['notFoundHandler'] = function ($c) {
 // Database connection
 // -----------------------------------------------------------------------------
 $container['db'] = function ($c) {
-    $settings = $c->get('settings');
-        $db = new PDO(
-            "mysql:host=" . $settings['db']['host'] . 
-            ";dbname=" . $settings['db']['dbname'] . 
-            ";charset=" . $settings['db']['charset'],
-            $settings['db']['username'], $settings['db']['password']);
-        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
-        $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
-        return $db;
+    $settings = $c->get('settings')['db'];
+        $pdo = new PDO(
+            "mysql:host=" . $settings['host'] . 
+            ";dbname=" . $settings['dbname'] . 
+            ";charset=" . $settings['charset'],
+            $settings['username'], $settings['password']);
+        // $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
+        // $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
+        return $pdo;
 };
 
 // -----------------------------------------------------------------------------
@@ -80,10 +80,10 @@ $container[App\Action\HomeAction::class] = function ($c) {
 // -----------------------------------------------------------------------------
 /* The order of injection is important */
 /* Worst case, inject $container->db */
-$container['HomeController'] = function ($container){
-    return new App\Controllers\HomeController($container->view,
-                                              $container->logger,
-                                              $container->flash);
+$container['HomeController'] = function ($c){
+    return new App\Controllers\HomeController($c->view,
+                                              $c->logger,
+                                              $c->flash);
 };
 
 // -----------------------------------------------------------------------------

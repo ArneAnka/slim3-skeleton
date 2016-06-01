@@ -19,6 +19,7 @@ class HomeController
 		$this->view = $view;
 		$this->flash = $flash;
 		$this->logger = $logger;
+		$this->user = $user;
 	}
 
 	public function index($request, $response, $args)
@@ -26,9 +27,11 @@ class HomeController
 		
 		$this->logger->info("Home page action dispatched");
 
-		$query = User::findSecond('1');
+		var_dump($user);
 
-		return $this->view->render($response, 'home.twig', ['querys' => $query]);
+		// $query = $this->User->findOne('4');
+
+		return $this->view->render($response, 'home.twig', ['query' => $query]);
 	}
 
 }
